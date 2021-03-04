@@ -27,7 +27,6 @@ class MemberServiceIntegrationTest {
     MemberRepository memberRepository;
     //서비스랑 리포를 둘 다 확인해야해
     @Test
-    @Commit
     public void 회원가입() throws Exception {
         //Given
         Member member = new Member();

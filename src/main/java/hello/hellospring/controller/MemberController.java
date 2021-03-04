@@ -21,7 +21,7 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    @GetMapping("/members/new")
+    @GetMapping("members/new")
     public String createForm() {
 
         return "members/createMemberForm";
