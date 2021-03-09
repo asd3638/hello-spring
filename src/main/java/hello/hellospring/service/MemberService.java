@@ -14,7 +14,10 @@ import java.util.Optional;
 public class MemberService {
 
     private final MemberRepository memberRepository;
-
+    /*ApplicationContext applicationContext = new
+            AnnotationConfigApplicationContext(SpringConfig.class);
+    MemberRepository memberService =
+            applicationContext.getBean("memberService", MemberService.class);*/
     @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;

@@ -1,22 +1,27 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
+@Repository
+//RequiredArgsConstructor 쓰면 따로 생성자를 만들지 않아도 되기 때문에 의존관계 주입을 새로 추가할 때 코드가 특히 간결해진다.
 public class jpaMemberRepository implements MemberRepository{
 
     //스프링 부트가 자동으로 만들어준다.
     //JPA 쓰면 이거 자동으로 주입받는다고 생각하면 된다.
     private final EntityManager em;
 
-    @Autowired
-    public jpaMemberRepository(EntityManager em) {
-        this.em = em;
-    }
+//    @Autowired
+//    public jpaMemberRepository(EntityManager em) {
+//        this.em = em;
+//    }
 
     @Override
     public Member save(Member member) {
